@@ -3,6 +3,17 @@
     width: 100%;
 }
 
+.button_play{
+    color: #ffffff!important;
+    border-width: 0px!important;
+    border-radius: 6px;
+    font-size: 1.2em;
+    background-color: #306621;
+    padding: 0.3em 1em!important;
+}
+.button_play:hover{
+    cursor: pointer;
+}
 .titlePage{
     margin-top:15px;
     background-color: #1E1E1E;
@@ -117,6 +128,9 @@
     }
 }
 @media screen and (min-width: 1200px) {
+    .button_play{
+        font-size: 1.6em;
+    }
     .promotion img{
         margin-left: calc( 50% - 320px );
     }

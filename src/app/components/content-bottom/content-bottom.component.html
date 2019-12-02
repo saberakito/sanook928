@@ -1,32 +1,18 @@
-
-<div class="contentBotArea">
-    <div class="dataContentBot">
-      <div class="row">
-          <div data-aos="fade-right" data-aos-once="true" data-aos-delay="200" class="col-sm newsArea" *ngFor="let todo of todoList;" [routerLink]="['/news/news-detail',todo.adjust_page_title+'-'+todo.adjust_page_id]">
-          <!-- <div *ngFor="let todo of todoList;" class="col-sm newsArea" [routerLink]="['/news/news-detail',todo.content_id]"> -->
-              <!-- <div class="logo-news">
-                  <img class="center" src="/assets/images/logo/logo.png">
-              </div>
-              <div class="line-news">
-                  <img class="center" src="/assets/images/logo/logo.png">
-              </div> -->
-              <div class="image-news" [ngStyle]="{backgroundImage:'url(/upload/files/' + todo.adjust_page_image_name  + '.' + todo.adjust_page_image_type  + ')'}" >
-                <!-- <div class="image-news" [ngStyle]="{backgroundImage:'url(/assets/images/content/pro4.png)'}" > -->
-                <div class="div-image"></div>
-              </div>
-              <div class="text-news" style="color:red; ">
-                    {{todo.adjust_page_title}}
-              </div>
-              <div class="des-news" >
-                  {{todo.adjust_page_short_description}}
-              </div>
-          </div>
-          
-      </div>
-      <div style="width: 100%; text-align:center;margin-top:30px;">
-          <div class="btn btn-danger view_more" style="text-align: center;" routerLink="/news">ดูเพิ่มเติม +</div>
-      </div>
-      
+<div  class="contentBotArea">
+        <div  class="titleContentBot">
+            <div  class="titleLeft">ทีเด็ดบอลเต็งวันนี้</div>
+            <div  class="viewmore" routerLink="/tded" tabindex="0" ng-reflect-router-link="/tded">ดูเพิ่มเติม+</div>
+        </div>
+        <div  class="dataContentBot">
+            <div  class="row">
+                <ng-container *ngFor="let tdedd of todoList; index as  i; first as isFirst;let l = count">
+                        <div  class="col-sm newsArea hvr-push" tabindex="0" [routerLink]="['/tded/tded-detail',tdedd.adjust_page_title+'-'+tdedd.adjust_page_id]">
+                            <div  class="image-news" style="background-image: url(/upload/files/{{tdedd.adjust_page_image_name}}.{{tdedd.adjust_page_image_type}});">
+                                <img src="/upload/files/{{tdedd.adjust_page_image_name}}.{{tdedd.adjust_page_image_type}}" style="width: 100%;padding: 10px;" alt="">
+                            </div>
+                            <div  class="text-news" style="color:white; height: 60px; overflow: hidden;"> {{tdedd.adjust_page_title}} </div>
+                        </div>
+                </ng-container>
+            </div>
+        </div>
     </div>
-</div>
-

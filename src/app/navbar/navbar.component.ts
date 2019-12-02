@@ -21,7 +21,7 @@ export class NavbarComponent implements OnInit {
   }
 
   logout(){
-    this.serviceMenu.setLoggedIn(false);
+    // this.serviceMenu.setLoggedIn(false);
     localStorage.setItem("login", 'failed');
     this.router.navigate(['/home']);
     window.location.reload();

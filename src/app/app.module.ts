@@ -43,7 +43,15 @@ import { Manage_dataComponent } from './components/manage_data/manage_data.compo
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { ColorSketchModule } from 'ngx-color/sketch';
 
-import { SlickCarouselModule } from 'ngx-slick-carousel';  
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { SportComponent } from './components/sport/sport.component';
+import { SportDetailComponent } from './components/sport-detail/sport-detail.component';
+import { CasinoComponent } from './components/casino/casino.component';
+import { CasinoDetailComponent } from './components/casino-detail/casino-detail.component';
+import { LottoComponent } from './components/lotto/lotto.component';
+import { GameComponent } from './components/game/game.component';
+import { TdedComponent } from './components/tded/tded.component';
+import { TdedDetailComponent } from './components/tded-detail/tded-detail.component';  
 const appRoutes:Routes = [
   
   {path:"home", component:HomeComponent, canActivate:[AuthGuard]},
@@ -57,9 +65,23 @@ const appRoutes:Routes = [
   {path:"withdraw", component:WithdrawComponent},
   {path:"resultfootball", component:ResultfootballComponent, canActivate:[AuthGuard]},
   {path:"howtoplay", component:HowtoplayComponent, canActivate:[AuthGuard]},
+  {path:"sport", component:SportComponent, canActivate:[AuthGuard]},
   {path:"contact", component:ContactusComponent, canActivate:[AuthGuard]},
   {path:"news", component:NewsComponent, canActivate:[AuthGuard]},
   {path:"regComplete", component:regCompleteComponent, canActivate:[AuthGuard]},
+  {path:"lotto", component:LottoComponent, canActivate:[AuthGuard]},
+  {path:"game", component:GameComponent, canActivate:[AuthGuard]},
+  {path:"casino", component:CasinoComponent, canActivate:[AuthGuard]},
+  {path:"casino", children:[
+    {path:"casino-detail/:id", component:CasinoDetailComponent, canActivate:[AuthGuard]}
+  ]},
+  {path:"tded", component:TdedComponent, canActivate:[AuthGuard]},
+  {path:"tded", children:[
+    {path:"tded-detail/:id", component:TdedDetailComponent, canActivate:[AuthGuard]}
+  ]},
+  {path:"sport", children:[
+    {path:"sport-detail/:id", component:SportDetailComponent, canActivate:[AuthGuard]}
+  ]},
   {path:"news", children:[
     {path:"news-detail/:id", component:NewsDetailComponent, canActivate:[AuthGuard]}
   ]},
@@ -98,7 +120,15 @@ const appRoutes:Routes = [
     ResultfootballComponent,
     sanitizeHtmlPipe,
     PageComponent,
-    PromotionDetailComponent
+    PromotionDetailComponent,
+    SportComponent,
+    SportDetailComponent,
+    CasinoComponent,
+    CasinoDetailComponent,
+    LottoComponent,
+    GameComponent,
+    TdedComponent,
+    TdedDetailComponent
   ],
   imports: [
     BrowserModule,

@@ -17,7 +17,6 @@ export class RegisterComponent implements OnInit {
   public user_name:string;
   public user_tel:string;
   public user_line:string;
-  public email:string;
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
       this.id =  params['id'];

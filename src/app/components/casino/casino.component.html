@@ -1,0 +1,48 @@
+<div _ngcontent-psd-c4="" class="container">
+    <div _ngcontent-psd-c4="" class="titlePage">CASINO</div>
+    <div _ngcontent-psd-c4="" class="contentPageArea">
+        <div _ngcontent-psd-c4="" class="text_center text_yellow sz15">เข้าสู่ระบบโดยใช้ User ID ของคุณลูกค้า</div>
+        <div _ngcontent-psd-c4="" class="text_center">(เพื่อให้ง่ายต่อความเข้าใจ) กรณีเข้าหน้าเว็บแล้วเป็นภาษาอังกฤษ ให้กดเปลี่ยนภาษาเป็น "ภาษาไทย"</div>
+        <div _ngcontent-psd-c4="" class="img_center"><img _ngcontent-psd-c4="" alt="" src="assets/images/sport/TH.jpg"></div>
+        <div _ngcontent-psd-c4="" class="text_center text_black  sz15 bg_animate">คลิกที่ (คาสิโน) เลือกเกมส์ที่คุณลูกค้าต้องการเล่น</div>
+        <div _ngcontent-psd-c4="" class="titleContent">
+            <div _ngcontent-psd-c4="" class="dataContentBot">
+                <div _ngcontent-psd-c4="" class="row">
+                    <ng-container *ngFor="let menu of todoList; index as  i; first as isFirst;let l = count">
+                    
+                        <ng-container *ngIf="i==0">
+                            <div _ngcontent-psd-c4="" class="col-xl-10 col-md-6 col-sm-12 newsArea hvr-box-shadow-inset" style="margin-left:auto;margin-right:auto;" tabindex="0" [routerLink]='["/casino/casino-detail","-"+menu.adjust_page_id]'>
+                                <div _ngcontent-psd-c4="" class="cardNews">
+                                    <div _ngcontent-psd-c4="" class="image-news"  style="background-image: url('/upload/files/{{menu.adjust_page_image_name}}.{{menu.adjust_page_image_type}}');">
+                                        <img src="/upload/files/{{menu.adjust_page_image_name}}.{{menu.adjust_page_image_type}}" style="width: 100%;padding: 10px;" alt="">
+                                    </div>
+                                    <div _ngcontent-psd-c4="" class="text-news ">
+                                        <div _ngcontent-psd-c4="" class="center" style="width: 23%;">
+                                            <div _ngcontent-psd-c4="" class="button hvr-rectangle-out hvr-icon-forward" href="#">คลิกเพื่อดูวิธีเล่น <i _ngcontent-psd-c4="" class="fa fa-chevron-circle-right hvr-icon"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-container>
+                        
+                        <ng-container *ngIf="i!=0">
+                          <div _ngcontent-psd-c4="" class="col-xl-4 col-md-6 col-sm-12 newsArea hvr-box-shadow-inset" tabindex="0" [routerLink]='["/casino/casino-detail","-"+menu.adjust_page_id]'>
+                              <div _ngcontent-psd-c4="" class="cardNews">
+                                  <div _ngcontent-psd-c4="" class="image-news"  style="background-image: url('/upload/files/{{menu.adjust_page_image_name}}.{{menu.adjust_page_image_type}}');">
+                                    <img src="/upload/files/{{menu.adjust_page_image_name}}.{{menu.adjust_page_image_type}}" style="width: 100%;padding: 10px;" alt="">
+                                </div>
+                                  <div _ngcontent-psd-c4="" class="text-news ">
+                                      <div _ngcontent-psd-c4="" class="center">
+                                          <div _ngcontent-psd-c4="" class="button hvr-rectangle-out hvr-icon-forward" href="#">คลิกเพื่อดูวิธีเล่น <i _ngcontent-psd-c4="" class="fa fa-chevron-circle-right hvr-icon"></i></div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                        </ng-container>
+                    </ng-container>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

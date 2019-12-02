@@ -1,41 +1,37 @@
-<!-- <iframe frameborder="0" height="550px" scrolling="no" src="https://winlot888.com/webbox/?token=1f0fe4af2993e20db6f9685ecdb3a13dffaeca17 " width="100%"></iframe> -->
-<div class="container">
-    <div class="titlePage">สมัครสมาชิก</div>
-    <form class="form-horizontal" #form='ngForm' (ngSubmit)="onSubmit(form)">
-        <fieldset>
-          <div class="control-group" >
-            <label class="control-label"  for="user_name">ชื่อ</label>
-            <div class="controls">
-              <input type="text" name="user_name" [(ngModel)]="user_name" placeholder="ชื่อ" class="input-xlarge form-control">
+<div  class="container">
+    <div  class="titlePage">สมัครสมาชิก</div>
+    <form   class="form-horizontal ng-untouched ng-pristine ng-valid" novalidate="">
+        <fieldset >
+            <div style=" margin: auto;
+          width: 50%;
+          padding: 10px; text-align: center;">
+                <a  href="https://www.memberbet.com/" style="text-decoration: none;" target="_bank">
+                    <div class="button_play" style="clear: right;">ทางเข้าเล่น</div>
+                </a>
             </div>
-          </div>
-       
-          <div class="control-group">
-            <label class="control-label" for="user_tel">เบอร์โทร</label>
-            <div class="controls">
-              <input type="text" name="user_tel" [(ngModel)]="user_tel"placeholder="เบอร์โทร" class="input-xlarge form-control">
+            <div  class="control-group">
+                <label  class="control-label" for="user_name">ชื่อ</label>
+                <div  class="controls">
+                    <input  class="input-xlarge form-control ng-untouched ng-pristine ng-valid" name="user_name" placeholder="ชื่อ" type="text" ng-reflect-name="user_name">
+                </div>
             </div>
-          </div>
-       
-          <div class="control-group">
-              <label class="control-label" for="user_line">E-mail</label>
-              <div class="controls">
-                <input type="text" name="email" [(ngModel)]="email" placeholder="E-mail" class="input-xlarge form-control">
-              </div>
+            <div  class="control-group">
+                <label  class="control-label" for="user_tel">โทร</label>
+                <div  class="controls">
+                    <input  class="input-xlarge form-control ng-untouched ng-pristine ng-valid" name="user_tel" placeholder="โทร" type="text" ng-reflect-name="user_tel">
+                </div>
             </div>
-          <div class="control-group">
-            <label class="control-label" for="user_line">ไอดีไลน์</label>
-            <div class="controls">
-              <input type="text" name="user_line" [(ngModel)]="user_line" placeholder="ไอดีไลน์" class="input-xlarge form-control">
+            <div  class="control-group">
+                <label  class="control-label" for="user_line">ไอดีไลน์</label>
+                <div  class="controls">
+                    <input  class="input-xlarge form-control ng-untouched ng-pristine ng-valid" name="user_line" placeholder="ไอดีไลน์" type="text" ng-reflect-name="user_line">
+                </div>
             </div>
-          </div>
-    
-          <div class="control-group">
-            <div class="controls">
-              <button type="submit" class="btn btn-success">สมัครสมาชิก</button>
+            <div  class="control-group">
+                <div  class="controls">
+                    <button  class="btn btn-success" type="submit">สมัครสมาชิก</button>
+                </div>
             </div>
-          </div>
         </fieldset>
-      </form>
-    
+    </form>
 </div>

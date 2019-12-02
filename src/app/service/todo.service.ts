@@ -9,35 +9,30 @@ interface registerData{
   register_text_detail:string,
   type:string
 }
-interface myData{
-  success:boolean,
-  message:string
-}
 
 @Injectable({
   providedIn: 'root'
 })
 export class TodoService {
-  loggedInStatus = true;
-  constructor(private http:Http, private http2: HttpClient) { }
 
-  setLoggedIn(value: boolean){
-    localStorage.setItem("login", 'success');
-    this.loggedInStatus = value;
-  }
-  get isLoggedIn(){
-    return this.loggedInStatus
-  }
+  constructor(private http:Http, private http2: HttpClient) { }
 
 private local = window.location.origin;
 //private local = "http://localhost:80";
-//private local = "http://betufa55.com"; 
+//private local = "http://betufa55.com";
 
   getTodoList(data){
     if(data==1){
-      return this.http.get(this.local+"/api/getNews.php?type=1&ac=all").pipe(map((res)=>res.json()));
+      return this.http.get(this.local+"/api/getNews.php?ac=all").pipe(map((res)=>res.json()));
     }else{
-      return this.http.get(this.local+"/api/getNews.php?type=1").pipe(map((res)=>res.json()));
+      return this.http.get(this.local+"/api/getNews.php?type="+data,).pipe(map((res)=>res.json()));
+    }
+  }
+  getTodoList2(data){
+    if(data==1){
+      return this.http.get(this.local+"/api/tded.php?ac=all").pipe(map((res)=>res.json()));
+    }else{
+      return this.http.get(this.local+"/api/tded.php?type="+data,).pipe(map((res)=>res.json()));
     }
   }
   getDetailNews(id){
@@ -80,63 +75,17 @@ private local = window.location.origin;
     return this.http.post(this.local+'/api/dataAdjust.php',{ac:"getPopup"}).pipe(map((res)=>res.json()));;
   }
 
-  getSetting(){
-    return this.http.post(this.local+'/api/dataAdjust.php',{ac:"getSetting"}).pipe(map((res)=>res.json()));
-  }
   saveMember(data:string){
     return this.http2.post<contactData>(this.local+'/api/dataAdjust.php',{ac:"saveMember",data:data});
   }
-
-  
-  ValidateUser(username:string,password:string){
-   return this.http2.post<myData>(this.local+'/api/dataAdjust.php?ac=login',{username:username,password:password});
-    //return {success:true};
-  }
-
-
-
-
-
-
-  saveLink(data,link){
-    return this.http2.post<contactData>(this.local+'/api_nubshare/dataAdjust.php',{ac:"save_link",data:data,link:link});
-  }
-  getDataLink(link){
-    return this.http2.get<contactData>('http://localhost:3000/getContent/'+encodeURIComponent(link),{});
-  }
-  getDataLike(link,data_id){
-    return this.http2.post<contactData>('http://localhost:3000/getLike/'+encodeURIComponent(link),{data_id:data_id});
-  }
-  getDataLike_from_mysql(data_id){
-    return this.http2.post(this.local+'/api_nubshare/dataAdjust.php',{ac:"get_user_like",data_id:data_id});
-  }
-  saveDataLike(data_id,data_array_user_like){
-    return this.http2.post<contactData>(this.local+'/api_nubshare/dataAdjust.php',{ac:"save_like",data_id:data_id,data_array_user_like:data_array_user_like});
-  }
-  saveUserWin(data_id,user_id,user_name){
-    return this.http2.post<contactData>(this.local+'/api_nubshare/dataAdjust.php',{ac:"save_user_win",data_id:data_id,user_id:user_id,user_name:user_name});
-  }
-  getUserWin(data_id){
-    return this.http2.post<contactData>(this.local+'/api_nubshare/dataAdjust.php',{ac:"get_user_win",data_id:data_id});
-  }
+//   getTodoMenuList(){
+//     return this.http.get("https://well-directed-actio.000webhostapp.com//api/getMenu.php?ac=getMainMenu").map((res)=>res.json());
+//  }
 }
 interface contactData{
   success:boolean,
-  post_message:string,
-  dp_id:string,
-  data_id:string,
-  image_link:string,
-  all_likes:string,
-  image_post:string,
-  all_comments:string,
-  dp_name_page:string,
-  dp_link_like:string,
-  data_user_like:string,
   message:string,
   data:string,
   contact_text_detail:string,
-  type:string,
-  status_link:boolean
+  type:string
 }
-
-

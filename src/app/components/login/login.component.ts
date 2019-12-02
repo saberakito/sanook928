@@ -20,17 +20,17 @@ export class loginComponent {
     }
   }
   public Validateuser(){
-    this.loginService.ValidateUser(this.username,this.password).subscribe(data => {
-      if(data.success==true){
-       // this.router.navigateByUrl('/home');
-        this.loginService.setLoggedIn(true);
-        this.infoMessage = '';
-        window.location.reload();
-      }else{
-        this.infoMessage = 'Login Failed. Please Try Again.';
-        this.router.navigate(['login']);
-      }
-    });
+    // this.loginService.ValidateUser(this.username,this.password).subscribe(data => {
+    //   if(data.success==true){
+    //    // this.router.navigateByUrl('/home');
+    //     this.loginService.setLoggedIn(true);
+    //     this.infoMessage = '';
+    //     window.location.reload();
+    //   }else{
+    //     this.infoMessage = 'Login Failed. Please Try Again.';
+    //     this.router.navigate(['login']);
+    //   }
+    // });
   }
 }
 

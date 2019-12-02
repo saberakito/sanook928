@@ -12,11 +12,11 @@ export class WithdrawComponent implements OnInit {
   data_title:any;
   data_deatail:any;
   ngOnInit() {
-    this.todoServcie.getDataPage('withdraw2').subscribe((response)=>{
-      this.data_title = response.data.menu_name;
-      this.data_deatail = response.data.menu_detail;
+    // this.todoServcie.getDataPage('withdraw2').subscribe((response)=>{
+    //   this.data_title = response.data.menu_name;
+    //   this.data_deatail = response.data.menu_detail;
       
-    });
+    // });
   }
 
 }
